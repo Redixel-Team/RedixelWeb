@@ -19,6 +19,16 @@
     ]
   },
   {
+    "id": "sprite",
+    "title": "Sprite",
+    "description": "A texture pipeline test: a PNG-mapped crate spinning head-on, its faces UV-mapped and resolved by the depth buffer.",
+    "tags": [
+      "3D",
+      "Rendering",
+      "Textures"
+    ]
+  },
+  {
     "id": "triangle",
     "title": "Triangle",
     "description": "A fundamental rendering test displaying a 2D colored triangle using the Redixel rendering pipeline.",

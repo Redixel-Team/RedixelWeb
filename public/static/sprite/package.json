@@ -1,0 +1,15 @@
+{
+  "name": "sprite",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "sprite_bg.wasm",
+    "sprite.js",
+    "sprite.d.ts"
+  ],
+  "main": "sprite.js",
+  "types": "sprite.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
