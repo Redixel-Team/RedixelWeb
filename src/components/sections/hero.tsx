@@ -42,9 +42,9 @@ export function Hero() {
           </h1>
 
           <p className='flex max-w-2xl flex-col gap-0 border-primary border-l-2 pl-4 text-left font-body-lg font-light text-lg text-on-surface leading-tight opacity-90 md:text-[24px]'>
-            <span>The 2D Game Engine built in Rust.</span>
+            <span>The 2D & 3D Game Engine built in Rust.</span>
             <GlitchText textClassName='font-medium text-primary-container'>
-              Safe, Fast, and Pixel-Perfect.
+              Safe, Fast, and Cross-Platform.
             </GlitchText>
           </p>
 
