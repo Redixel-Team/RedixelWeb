@@ -2,9 +2,9 @@
   {
     "id": "pong",
     "title": "Pong",
-    "description": "The classic reimagined. Showcasing deterministic physics and low-latency input handling.",
+    "description": "The classic reimagined. Showcasing paddle physics, an AI opponent and low-latency keyboard and mouse-wheel input.",
     "tags": [
-      "Deterministic",
+      "Input",
       "2D_Collision"
     ]
   },
@@ -40,7 +40,7 @@
   {
     "id": "triangle_3d",
     "title": "Triangle 3D",
-    "description": "A rotating 3D triangle demonstrating mathematical projections, Z-sorting, and 3D transformations.",
+    "description": "A rotating 3D tetrahedron demonstrating perspective projection, depth-buffered occlusion, and 3D transformations.",
     "tags": [
       "3D",
       "Math",
