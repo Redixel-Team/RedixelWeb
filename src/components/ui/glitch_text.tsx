@@ -118,11 +118,10 @@ export function GlitchSlices({
       <span className='glitch-text-strips relative inline-block align-top'>
         {strips.length > 0 ? (
           <Fragment>
-            <span className={`opacity-0 ${contentClassName}`} aria-hidden>
-              {children}
-            </span>
+            {/* The in-flow copy is the one assistive tech reads; the animated strips repeat it visually only. */}
+            <span className={`opacity-0 ${contentClassName}`}>{children}</span>
 
-            <span className='absolute inset-0 overflow-hidden'>
+            <span className='absolute inset-0 overflow-hidden' aria-hidden>
               {strips.map((strip) => (
                 <span
                   key={`${strip.top}-${strip.height}-${strip.animId}-${strip.delay}-${strip.x1}`}
