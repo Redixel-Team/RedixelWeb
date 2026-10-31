@@ -8,6 +8,8 @@ export function ShaderBackground({ className = '' }: { className?: string }) {
     if (!canvas) return;
 
     let animationFrameId: number;
+    // With "reduce motion" on, draw one still frame (redrawn on resize) instead of animating.
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     function syncSize() {
       if (!canvas) return;
@@ -26,7 +28,10 @@ export function ShaderBackground({ className = '' }: { className?: string }) {
       }
     }
 
-    const resizeObserver = new ResizeObserver(syncSize);
+    const resizeObserver = new ResizeObserver(() => {
+      syncSize();
+      if (reduceMotion) animationFrameId = requestAnimationFrame(render);
+    });
     resizeObserver.observe(canvas);
     syncSize();
 
@@ -121,38 +126,21 @@ export function ShaderBackground({ className = '' }: { className?: string }) {
 
     const uTime = gl.getUniformLocation(prog, 'u_time');
     const uRes = gl.getUniformLocation(prog, 'u_resolution');
-    const uMouse = gl.getUniformLocation(prog, 'u_mouse');
-
-    const mouse = { x: canvas.width / 2, y: canvas.height / 2 };
-
-    const handleMouseMove = (event: MouseEvent) => {
-      const rect = canvas.getBoundingClientRect();
-      if (rect.width && rect.height) {
-        const nx = (event.clientX - rect.left) / rect.width;
-        const ny = 1.0 - (event.clientY - rect.top) / rect.height;
-        mouse.x = nx * canvas.width;
-        mouse.y = ny * canvas.height;
-      }
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
 
     function render(t: number) {
       if (!canvas || !gl) return;
       gl.viewport(0, 0, canvas.width, canvas.height);
       if (uTime) gl.uniform1f(uTime, t * 0.001);
       if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
-      if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
 
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-      animationFrameId = requestAnimationFrame(render);
+      if (!reduceMotion) animationFrameId = requestAnimationFrame(render);
     }
 
     animationFrameId = requestAnimationFrame(render);
 
     return () => {
       cancelAnimationFrame(animationFrameId);
-      window.removeEventListener('mousemove', handleMouseMove);
       resizeObserver.disconnect();
     };
   }, []);

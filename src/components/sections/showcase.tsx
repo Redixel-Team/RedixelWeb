@@ -44,7 +44,7 @@ export function Showcase() {
         </div>
 
         <div className='flex min-h-0 min-w-0 grow flex-col gap-gutter max-md:gap-12 lg:flex-row'>
-          <div className='custom-scrollbar flex h-full max-h-80 w-full min-w-0 flex-col gap-4 overflow-y-auto pr-2 sm:max-h-96 lg:max-h-140 lg:w-1/3'>
+          <div className='flex h-full max-h-80 w-full min-w-0 flex-col gap-4 overflow-y-auto pr-2 sm:max-h-96 lg:max-h-140 lg:w-1/3'>
             {GAMES.map((game) => {
               const isActive = activeGame?.id === game.id;
               const accent = getGameAccent(game.id);
@@ -58,7 +58,7 @@ export function Showcase() {
                     ...accent.cssVars,
                     borderLeftColor: 'var(--game-accent)',
                   }}
-                  className={`group showcase-card relative flex w-full shrink-0 cursor-pointer flex-col overflow-hidden border border-surface-variant border-l-4 bg-surface-container-low p-md text-left transition-all duration-300 ${isActive ? '-translate-y-1 bg-surface-container shadow-[0_0_32px_var(--game-shadow)]' : 'hover:-translate-y-1 hover:bg-surface-container hover:shadow-[0_0_32px_var(--game-shadow)]'} ${isActive ? 'border-(--game-accent)' : ''}`}
+                  className={`group relative flex w-full shrink-0 cursor-pointer flex-col overflow-hidden border border-surface-variant border-l-4 bg-surface-container-low p-md text-left transition-all duration-300 ${isActive ? '-translate-y-1 bg-surface-container shadow-[0_0_32px_var(--game-shadow)]' : 'hover:-translate-y-1 hover:bg-surface-container hover:shadow-[0_0_32px_var(--game-shadow)]'} ${isActive ? 'border-(--game-accent)' : ''}`}
                 >
                   <span
                     className={`pointer-events-none absolute inset-0 transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
