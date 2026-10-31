@@ -17,9 +17,24 @@ This repository serves strictly as the presentation layer. **No game logic or Ru
 
 ## Tech Stack
 
-- **Framework:** React + TypeScript + Vite
-- **Styling:** Tailwind CSS
-- **Integration:** WebAssembly (WASM) + WebGPU (via Redixel Engine)
+- **Framework:** [TanStack Start](https://tanstack.com/start) (React 19 + TypeScript, server-rendered through Nitro) on Vite
+- **Styling:** Tailwind CSS v4
+- **Validation:** zod, for the games manifest
+- **Integration:** WebAssembly (WASM) + WebGPU, with a WebGL2 fallback (via Redixel Engine)
+- **Tooling:** Biome (lint and format)
+
+## Running Locally
+
+Requires Node.js and npm.
+
+```sh
+npm install
+npm run dev      # dev server on http://localhost:3000
+npm run build    # production build into .output/
+npm run check    # Biome lint + format check
+```
+
+The games are served from `public/static/`, which the engine's CI keeps in sync — no Rust toolchain is needed to work on the site. To try a local engine change, build an example with `wasm-pack build examples/<name> --target web --out-dir <this repo>/public/static/<name>` from the engine repository.
 
 ## Links
 
