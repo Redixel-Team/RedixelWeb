@@ -70,7 +70,7 @@ export function Navbar() {
       </ul>
 
       <a
-        href='https://github.com/RedixelCoreTeam/Redixel'
+        href='https://github.com/Redixel-Team/Redixel'
         target='_blank'
         rel='noopener noreferrer'
         className='shrink-0 cursor-pointer border border-primary bg-transparent px-3 py-1.5 font-label-mono text-primary text-xs uppercase tracking-widest shadow-[0_0_10px_rgba(255,180,172,0.3)] transition-all hover:bg-primary hover:text-on-primary hover:shadow-[0_0_20px_rgba(255,181,158,0.6)] sm:px-6 sm:py-2 sm:text-sm'
