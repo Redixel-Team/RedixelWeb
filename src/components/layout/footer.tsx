@@ -9,7 +9,7 @@ export function Footer() {
       <ul className='flex flex-wrap justify-center gap-margin md:justify-end'>
         <li>
           <a
-            href='https://github.com/RedixelCoreTeam/Redixel'
+            href='https://github.com/Redixel-Team/Redixel'
             target='_blank'
             rel='noopener noreferrer'
             className='cursor-pointer font-label-mono text-on-surface-variant text-sm opacity-80 transition-all hover:text-primary hover:opacity-100'

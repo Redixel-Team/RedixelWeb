@@ -2,13 +2,13 @@
 
 [![Online Playground](https://img.shields.io/badge/Online-Playground-orange?style=for-the-badge)](https://redixel-web.vercel.app/)
 
-Redixel Web is the official frontend and interactive playground for the [Redixel Game Engine](https://github.com/RedixelCoreTeam/Redixel).
+Redixel Web is the official frontend and interactive playground for the [Redixel Game Engine](https://github.com/Redixel-Team/Redixel).
 
-The primary goal of this repository is to demonstrate Redixel's cross-platform capabilities by running its native Rust games directly in the browser using **WebAssembly (WASM)** and **WebGPU**. It features a dynamic, CRT-themed UI that automatically catalogs and runs engine examples.
+The primary goal of this repository is to demonstrate Redixel's cross-platform 2D & 3D capabilities by running its native Rust games directly in the browser using **WebAssembly (WASM)** and **WebGPU**. It features a dynamic, CRT-themed UI that automatically catalogs and runs engine examples.
 
 ## How It Works
 
-This repository serves strictly as the presentation layer. **No game logic or Rust code is maintained here.** Instead, it relies on an automated CI/CD pipeline connected to the main [Redixel Engine repository](https://github.com/RedixelCoreTeam/Redixel). Whenever the engine's `main` branch is updated:
+This repository serves strictly as the presentation layer. **No game logic or Rust code is maintained here.** Instead, it relies on an automated CI/CD pipeline connected to the main [Redixel Engine repository](https://github.com/Redixel-Team/Redixel). Whenever the engine's `main` branch is updated:
 
 1. The engine's CI compiles the examples (e.g., Pong, Shooter) into `.wasm` and `.js` bindings.
 2. A build script generates a `games_manifest.json` containing the metadata (title, description, tags) from the engine's `Cargo.toml` files.
@@ -23,7 +23,7 @@ This repository serves strictly as the presentation layer. **No game logic or Ru
 
 ## Links
 
-- [Redixel Engine Repository](https://github.com/RedixelCoreTeam/Redixel)
+- [Redixel Engine Repository](https://github.com/Redixel-Team/Redixel)
 - [WebGPU Implementation Status](https://github.com/gpuweb/gpuweb/wiki/Implementation-Status)
 
 ## License

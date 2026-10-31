@@ -9,7 +9,10 @@ export const Route = createRootRoute({
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { title: 'Redixel' },
-      { name: 'description', content: 'The 2D Game Engine built in Rust. Safe, Fast, and Pixel-Perfect.' },
+      {
+        name: 'description',
+        content: 'The 2D & 3D Game Engine built in Rust. Safe, Fast, and Cross-Platform.',
+      },
       { name: 'theme-color', content: '#131317' },
     ],
     links: [
